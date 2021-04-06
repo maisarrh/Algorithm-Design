@@ -1,0 +1,37 @@
+#Radix Sort with Bucket Sort as the stable sorting algorithm
+import functools
+
+def get_num_digits(A):
+    biggest = 0
+    for item in A:
+        biggest = max(biggest,item)
+    return len(str(biggest))
+
+# turn 2D list of 10 empty buckets into a 1D list
+def turn(A):
+    return (functools.reduce(lambda a,b : a+b,A))
+
+def radix_sort(A):
+    num_digits = get_num_digits(A)
+    for digit in range(0, num_digits):
+        bucket = [[] for i in range(10)]
+
+        for item in A:
+            num = item // 10 ** (digit) % 10
+            bucket[num].append(item)
+
+        A = turn(bucket)
+
+    return A
+
+def main():
+    A = [84, 23, 62, 44, 16, 30, 95, 51]
+    print('Original list:')
+    print(A)
+
+    A = radix_sort(A)
+    print('Radix Sort')
+    print('Sorted list:')
+    print(A)
+
+main()
