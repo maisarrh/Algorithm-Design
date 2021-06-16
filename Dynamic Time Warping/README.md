@@ -1,1 +1,2 @@
+Assuming that video or audio from the news or customer feedback will be used to provide sentiment insights in the future, Dynamic Time Warping (DTW) is one of the algorithms that can potentially be used. Explain the concept of DTW and demonstrate the implementation of DTW in analysing a video or an audio. For example, given the following video (https://www.youtube.com/watch?v=ZwVFj8CfFeE), identify some words, for example “J&T”, “memohon” and “maaf”.
 
